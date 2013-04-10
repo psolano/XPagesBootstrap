@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="Contacts By First Name"></xp:dominoView>
+	</xp:this.data>
+	<xp:viewPanel rows="10" value="#{view1}" id="viewPanel1"
+		dataTableStyleClass="table table-hover" var="rowData">
+		<xp:this.facets>
+			<xp:pager partialRefresh="true" xp:key="headerPager"
+				id="pager1" pageCount="5" styleClass="pagination"
+				alwaysCalculateLast="true" panelPosition="right">
+				<xp:pagerControl type="Previous" id="pagerControl1"
+					styleClass="previouspager" value="«">
+				</xp:pagerControl>
+				<xp:pagerControl type="Group" id="pagerControl2"
+					styleClass="numberpager" currentStyleClass="currentpage">
+				</xp:pagerControl>
+				<xp:pagerControl type="Next" id="pagerControl3"
+					styleClass="nextpager" value="»">
+				</xp:pagerControl>
+			</xp:pager>
+		</xp:this.facets>
+		<xp:this.rowAttrs>
+			<xp:attr name="onclick">
+				<xp:this.value><![CDATA[#{javascript:'window.location.href="contact.xsp?action=editDocument&documentId=' + rowData.getColumnValue("UNID") + '";'}]]></xp:this.value>
+			</xp:attr>
+		</xp:this.rowAttrs>
+		<xp:viewColumn columnName="FirstName" id="viewColumn1">
+			<xp:viewColumnHeader value="First name"
+				id="viewColumnHeader1" sortable="true">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="LastName" id="viewColumn2">
+			<xp:viewColumnHeader value="Last Name"
+				id="viewColumnHeader2" sortable="true">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Country" id="viewColumn3">
+			<xp:viewColumnHeader value="Country"
+				id="viewColumnHeader3">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="DateOfBirth" id="viewColumn4">
+			<xp:this.converter>
+				<xp:convertDateTime type="date"></xp:convertDateTime>
+			</xp:this.converter>
+			<xp:viewColumnHeader value="Date of birth"
+				id="viewColumnHeader4">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Email" id="viewColumn5">
+			<xp:viewColumnHeader value="Email" id="viewColumnHeader5"></xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Telephone" id="viewColumn6">
+			<xp:viewColumnHeader value="Telephone"
+				id="viewColumnHeader6">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+		<xp:viewColumn columnName="Twitter" id="viewColumn7">
+			<xp:viewColumnHeader value="Twitter"
+				id="viewColumnHeader7">
+			</xp:viewColumnHeader>
+		</xp:viewColumn>
+	</xp:viewPanel>
+</xp:view>

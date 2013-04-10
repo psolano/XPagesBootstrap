@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257B430050F20C" version="9.0">
+<noteinfo noteid="bfa" sequence="1" unid="8907BB19BDA96DEB80257B440057E09F">
+<created><datetime dst="true">20130405T165951,35+01</datetime></created>
+<modified><datetime dst="true">20130405T165951,36+01</datetime></modified>
+<revised><datetime dst="true">20130405T165951,35+01</datetime></revised>
+<lastaccessed><datetime dst="true">20130405T165951,36+01</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20130405T165951,36+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Matt White/O=Exhilarate</name></updatedby>
+<wassignedby><name>CN=Matt White/O=Exhilarate</name></wassignedby>
+<item name="$TITLE"><text>bootstrap-datepicker.js</text></item>
+<item name="$Flags"><text>345CgQ</text></item>
+<item name="$FlagsExt" sign="true"><text>D</text></item>
+<item name="$FileModDT" sign="true"><datetime>20120220T173548,00+00</datetime></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>bootstrap-datepicker.js</text></item></note>

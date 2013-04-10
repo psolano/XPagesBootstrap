@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" rendered="false">
+
+	This XPage is used by the AJAX Search Typeahead. Code is in the
+	afterRenderResponse event
+	<xp:this.afterRenderResponse><![CDATA[#{javascript:var externalContext = facesContext.getExternalContext();
+var writer = facesContext.getResponseWriter();
+var response = externalContext.getResponse();
+  
+// set content type, e.g. ...
+response.setContentType("application/json");
+ 
+response.setHeader("Cache-Control", "no-cache");
+
+var list = $A(@Unique(@DbLookup(@DbName(), "Companies", context.getUrlParameter("query"), 1, "[PARTIALMATCH]"))).sort();
+if (@Trim(list) == ""){
+	list = [param.get("query")];
+}
+writer.write(toJson(list));
+ 
+writer.endDocument();}]]></xp:this.afterRenderResponse>
+	<xp:this.resources>
+		<xp:script src="/xpCommon.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+</xp:view>
